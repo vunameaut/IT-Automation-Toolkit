@@ -1,0 +1,28 @@
+{
+    "softwareList": [
+        { "name": "Google Chrome",      "id": "Google.Chrome",              "category": "Browser",       "enabled": true },
+        { "name": "Unikey",             "id": "DuongDieuPhap.UniKey",       "category": "Utility",       "enabled": true },
+        { "name": "Visual Studio Code", "id": "Microsoft.VisualStudioCode", "category": "Development",   "enabled": true },
+        { "name": "WinRAR",             "id": "RARLab.WinRAR",              "category": "Utility",       "enabled": true },
+        { "name": "Discord",            "id": "Discord.Discord",            "category": "Communication", "enabled": false },
+        { "name": "Microsoft Office",   "id": "Microsoft.Office",           "category": "Productivity",  "enabled": true },
+        { "name": "7-Zip",              "id": "7zip.7zip",                  "category": "Utility",       "enabled": true },
+        { "name": "Notepad++",          "id": "Notepad++.Notepad++",        "category": "Development",   "enabled": true }
+    ],
+    "backup": {
+        "defaultDestination": "D:\\Backup",
+        "targets": ["Desktop", "Documents", "Downloads", "Pictures"]
+    },
+    "cleanup": {
+        "tempFiles": true,
+        "recycleBin": true,
+        "dnsCache": true,
+        "windowsUpdateCache": true,
+        "browserCache": false
+    },
+    "logging": {
+        "enabled": true,
+        "logDirectory": "logs",
+        "logLevel": "INFO"
+    }
+}
