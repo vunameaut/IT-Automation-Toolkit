@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product
+    Id="*"
+    Name="IT Automation Toolkit"
+    Language="1033"
+    Version="$(var.ProductVersion)"
+    Manufacturer="IT Automation Toolkit"
+    UpgradeCode="A1B2C3D4-9E88-4C5F-9B2C-FAE0B6E7A3D1">
+
+    <Package InstallerVersion="500" Compressed="yes" InstallScope="perMachine" />
+    <MajorUpgrade DowngradeErrorMessage="A newer version is already installed." />
+    <MediaTemplate />
+
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+
+    <UIRef Id="WixUI_Minimal" />
+    <UIRef Id="WixUI_ErrorProgressText" />
+
+    <Feature Id="MainFeature" Title="IT Automation Toolkit" Level="1">
+      <ComponentGroupRef Id="HarvestedFiles" />
+      <ComponentRef Id="AppShortcut" />
+    </Feature>
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="IT Automation Toolkit" />
+      </Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="AppProgramsFolder" Name="IT Automation Toolkit" />
+      </Directory>
+    </Directory>
+  </Fragment>
+
+  <Fragment>
+    <DirectoryRef Id="AppProgramsFolder">
+      <Component Id="AppShortcut" Guid="A8599DF5-2C5A-4B2B-9E6E-7F1B86F0A5D7">
+        <Shortcut
+          Id="AppStartMenuShortcut"
+          Name="IT Automation Toolkit"
+          Description="IT Automation Toolkit"
+          Target="[SystemFolder]cmd.exe"
+          Arguments="/c &quot;[INSTALLFOLDER]start.bat&quot;"
+          WorkingDirectory="INSTALLFOLDER" />
+        <RemoveFolder Id="RemoveAppProgramsFolder" On="uninstall" />
+        <RegistryValue Root="HKCU" Key="Software\ITAutomationToolkit" Name="Installed" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+</Wix>

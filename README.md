@@ -18,6 +18,10 @@ Bo cong cu tu dong hoa tren Windows bang PowerShell. Tap trung vao cac tac vu la
 
 ## Cai dat va chay
 
+### Cach 0 (MSI - chi can tai ve va cai)
+Tai file MSI trong thu muc dist va chay nhu mot bo cai Windows.
+Sau khi cai xong, mo "IT Automation Toolkit" tu Start Menu.
+
 ### Cach 1 (khuyen nghi)
 Mo start.bat va chap nhan UAC. Launcher se tu dong:
 - Cai App Installer (Winget) neu thieu
@@ -58,6 +62,8 @@ IT-Automation-Toolkit/
 ├── main.ps1              # Menu chinh
 ├── start.bat             # Launcher
 ├── config.json           # Cau hinh
+├── dist/                  # File MSI da dong goi
+├── installer/             # File build MSI
 ├── modules/
 │   ├── logger.ps1
 │   ├── install.ps1
